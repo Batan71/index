@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protokol Loboda - Biofizički Kalkulator Masenog Fluksa</title>
-    <!-- Integracija eksterne biblioteke za automatsko generisanje QR kodova bez slika -->
-    <script src="https://cloudflare.com"></script>
     <style>
         :root {
             --primary: #00ffcc;
@@ -174,24 +172,6 @@
             border-radius: 6px;
             border: 1px solid rgba(143, 160, 221, 0.05);
         }
-
-        /* Stilovi za ugrađeni boks i QR kod */
-        .embedded-qr-box {
-            margin-top: 30px;
-            padding: 20px;
-            background: rgba(0, 255, 204, 0.03);
-            border: 1px dashed var(--primary);
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .qr-container {
-            display: inline-block;
-            padding: 10px;
-            background: white;
-            border-radius: 8px;
-            margin-top: 15px;
-        }
     </style>
 </head>
 <body>
@@ -261,7 +241,7 @@
             <div class="data-row" style="margin-top: 5px;"><span class="label-text">Ukupna zapremina mešavine (1 kap = 1 ml MCT/Kokos):</span><span class="value-text" id="res-ulje-dnevno">0 ml</span></div>
             <div class="data-row"><span class="label-text">Nulto vreme (08:00č) - Prvi blok:</span><span class="value-text alert-text">Popiti tačno 8 ml</span></div>
             <div class="data-row"><span class="label-text">Sredina I (13:00č) - Drugi blok:</span><span class="value-text alert-text">Popiti tačno 6 ml</span></div>
-            <div class="data-row"><span class="label-text">Sredina II (18:00č) - Treći blok:</span><span class="value-text highlight" id="res-ulje-treci">Popiti preostalih 0 ml</span></div>
+            <div class="data-row"><span class="label-text">Sredina II (18:00č) - Third blok:</span><span class="value-text highlight" id="res-ulje-treci">Popiti preostalih 0 ml</span></div>
         </div>
 
         <div class="data-box">
@@ -271,3 +251,6 @@
 
         <div class="phase-title">Faza 4: Aktuarska prognoza i ekstrapolacija produženog veka (Ve)</div>
         <div class="data-box">
+            <div class="data-row"><span class="label-text">Bazni prirodni vek (Vn):</span><span class="value-text" id="res-vn">0.0 godina</span></div>
+            <div class="data-row"><span class="label-text">Koeficijent toksičnog opterećenja (Fto):</span><span class="value-text" id="res-fto">0.0</span></div>
+            <div class="data-row" style="font-size: 16px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(143,160,221,0.2);"><span class="label-text">Predviđanje BEZ halogene zaštite:</span><span class="value-text" id="res-ve-bez" style="color: var(--accent);">0.0 godina</span></div>
