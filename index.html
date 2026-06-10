@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protokol Loboda - Napredni Biofizički Kalkulator</title>
+    <title>Protokol Loboda - Biofizički Kalkulator</title>
     <style>
         :root {
             --primary: #00ffcc;
@@ -14,174 +14,22 @@
             --accent: #ff3366;
             --warning: #ffcc00;
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 850px;
-            width: 100%;
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 255, 204, 0.05);
-            border: 1px solid rgba(0, 255, 204, 0.1);
-        }
-
-        h1 {
-            color: var(--primary);
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 30px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        input, select {
-            background: rgba(10, 15, 29, 0.7);
-            border: 1px solid rgba(143, 160, 221, 0.3);
-            padding: 12px;
-            border-radius: 8px;
-            color: var(--text);
-            font-size: 15px;
-            transition: all 0.3s ease;
-        }
-
-        input:focus, select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
-        }
-
-        .highlight-input {
-            border-color: var(--warning);
-            background: rgba(255, 204, 0, 0.05);
-        }
-
-        button {
-            width: 100%;
-            background: linear-gradient(135deg, #00ffcc 0%, #00b3ff 100%);
-            color: #0a0f1d;
-            border: none;
-            padding: 15px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 255, 204, 0.3);
-        }
-
-        .results {
-            margin-top: 35px;
-            border-top: 1px solid rgba(143, 160, 221, 0.2);
-            padding-top: 25px;
-            display: none;
-        }
-
-        .phase-title {
-            color: var(--primary);
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 25px;
-            margin-bottom: 12px;
-            border-left: 3px solid var(--primary);
-            padding-left: 10px;
-            text-transform: uppercase;
-        }
-
-        .data-box {
-            background: rgba(10, 15, 29, 0.5);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(143, 160, 221, 0.1);
-        }
-
-        .data-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        .data-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .label-text {
-            color: var(--text-muted);
-        }
-
-        .value-text {
-            font-weight: bold;
-            color: var(--text);
-        }
-
-        .highlight {
-            color: var(--primary);
-        }
-
-        .alert-text {
-            color: var(--accent);
-        }
-
-        .warning-text {
-            color: var(--warning);
-        }
-
-        .chronology {
-            max-height: 150px;
-            overflow-y: auto;
-            font-family: monospace;
-            font-size: 13px;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid rgba(143, 160, 221, 0.05);
-        }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg-dark); color: var(--text); margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { max-width: 800px; width: 100%; background: var(--card-bg); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 255, 204, 0.1); }
+        h1 { color: var(--primary); text-align: center; font-size: 24px; text-transform: uppercase; margin-bottom: 5px; }
+        .subtitle { text-align: center; color: var(--text-muted); font-size: 14px; margin-bottom: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 25px; }
+        .form-group { display: flex; flex-direction: column; }
+        label { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; }
+        input, select { background: rgba(10, 15, 29, 0.7); border: 1px solid rgba(143, 160, 221, 0.3); padding: 12px; border-radius: 8px; color: var(--text); font-size: 15px; }
+        .highlight-input { border-color: var(--warning); background: rgba(255, 204, 0, 0.05); }
+        button { width: 100%; background: linear-gradient(135deg, #00ffcc 0%, #00b3ff 100%); color: #0a0f1d; border: none; padding: 15px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; text-transform: uppercase; margin-top: 10px; }
+        button:hover { box-shadow: 0 5px 15px rgba(0, 255, 204, 0.3); }
+        .results { margin-top: 35px; border-top: 1px solid rgba(143, 160, 221, 0.2); padding-top: 25px; display: none; }
+        .phase-title { color: var(--primary); font-size: 16px; font-weight: bold; margin-top: 25px; margin-bottom: 12px; border-left: 3px solid var(--primary); padding-left: 10px; text-transform: uppercase; }
+        .data-box { background: rgba(10, 15, 29, 0.5); padding: 15px; border-radius: 8px; margin-bottom: 15px; }
+        .data-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; }
+        .chronology { max-height: 150px; overflow-y: auto; font-family: monospace; font-size: 13px; background: rgba(0, 0, 0, 0.2); padding: 10px; border-radius: 6px; }
     </style>
 </head>
 <body>
@@ -193,15 +41,15 @@
     <div class="grid">
         <div class="form-group">
             <label for="starost">Starost subjekta (godina)</label>
-            <input type="number" id="starost" value="55" min="1" max="120">
+            <input type="number" id="starost" value="55">
         </div>
         <div class="form-group">
             <label for="visina">Telesna visina (cm)</label>
-            <input type="number" id="visina" value="176" min="100" max="250">
+            <input type="number" id="visina" value="176">
         </div>
         <div class="form-group">
-            <label for="masa">Telesna masa (M) (kg)</label>
-            <input type="number" id="masa" value="86" min="30" max="250">
+            <label for="masa">Telesna masa (kg)</label>
+            <input type="number" id="masa" value="86">
         </div>
         <div class="form-group">
             <label for="pol">Pol subjekta</label>
@@ -220,14 +68,13 @@
         </div>
         <div class="form-group">
             <label for="proizvoljne_kapi" style="color: var(--warning);">Proizvoljan unos kapi joda</label>
-            <input type="number" id="proizvoljne_kapi" class="highlight-input" value="12" min="0" max="100">
+            <input type="number" id="proizvoljne_kapi" class="highlight-input" value="12">
         </div>
     </div>
 
     <button onclick="izvrsiProracun()">Pokreni trostepenu aktuarsku simulaciju</button>
 
     <div id="results" class="results">
-        
         <div class="phase-title">Faza 1: Faktor matrice i centralna jednačina</div>
         <div class="data-box">
             <div class="data-row"><span class="label-text">Faktor Površine Tela (SF):</span><span class="value-text" id="res-sf">0.0000 m²</span></div>
@@ -241,10 +88,9 @@
             <div class="data-row"><span class="label-text">Optimalni noćni lipidni anker (9h):</span><span class="value-text" id="res-nocni">0 kapi</span></div>
         </div>
 
-        <div class="phase-title">Faza 3: Operativne recepture za optimalni unos</div>
+        <div class="phase-title">Faza 3: Satna hronologija vodenog štita (Optimalna doza)</div>
         <div class="data-box">
-            <strong>Vodeni štit (Opcija A za optimalnu dozu):</strong>
-            <div class="data-row" style="margin-top: 5px;"><span class="label-text">Ukupan volumen vode:</span><span class="value-text" id="res-voda-vol">0 ml</span></div>
+            <div class="data-row"><span class="label-text">Ukupan volumen vode:</span><span class="value-text" id="res-voda-vol">0 ml</span></div>
             <div class="chronology" id="res-hronologija" style="margin-top: 8px;"></div>
         </div>
 
@@ -252,18 +98,75 @@
         <div class="data-box">
             <div class="data-row"><span class="label-text">Polazni bazni prirodni vek (Vn):</span><span class="value-text" id="res-vn">0.0 godina</span></div>
             <div class="data-row" style="margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(143,160,221,0.1);"><span class="label-text">Koeficijent toksičnog opterećenja (Fto):</span><span class="value-text" id="res-fto">0.0</span></div>
-            
-            <div class="data-row" style="font-size: 15px;"><span class="label-text">1. Predviđanje BEZ halogene zaštite:</span><span class="value-text alert-text" id="res-ve-bez">0.0 godina</span></div>
-            <div class="data-row" style="font-size: 16px; margin-top: 5px;"><span class="label-text">2. Halogena zaštita sa PUNOM optimalnom dozom:</span><span class="value-text highlight" id="res-ve-puna">0.0 godina</span></div>
-            <div class="data-row" style="font-size: 16px; margin-top: 5px; font-weight: bold; background: rgba(255,204,0,0.03); padding: 4px 0;"><span class="label-text" style="color: var(--warning);">3. Halogena zaštita sa PROIZVOLJNIM unosom kapi:</span><span class="value-text warning-text" id="res-ve-proizvoljna">0.0 godina</span></div>
+            <div class="data-row"><span class="label-text">1. Predviđanje BEZ halogene zaštite:</span><span class="value-text alert-text" id="res-ve-bez">0.0 godina</span></div>
+            <div class="data-row" style="margin-top: 5px;"><span class="label-text">2. Halogena zaštita sa PUNOM optimalnom dozom:</span><span class="value-text highlight" id="res-ve-puna">0.0 godina</span></div>
+            <div class="data-row" style="margin-top: 5px; font-weight: bold;"><span class="label-text" style="color: var(--warning);">3. Halogena zaštita sa PROIZVOLJNIM unosom kapi:</span><span class="value-text warning-text" id="res-ve-proizvoljna">0.0 godina</span></div>
         </div>
-
     </div>
 </div>
 
 <script>
     function izvrsiProracun() {
-        const Vstart = parseFloat(document.getElementById('starost').value);
-        const H = parseFloat(document.getElementById('visina').value);
-        const M = parseFloat(document.getElementById('masa').value);
-        const pol = document.getElementById('pol').value;
+        var Vstart = parseFloat(document.getElementById('starost').value);
+        var H = parseFloat(document.getElementById('visina').value);
+        var M = parseFloat(document.getElementById('masa').value);
+        var pol = document.getElementById('pol').value;
+        var dug = document.getElementById('toksicni_dug').value;
+        var N_proizvoljno = parseFloat(document.getElementById('proizvoljne_kapi').value);
+
+        if (isNaN(Vstart) || isNaN(H) || isNaN(M) || isNaN(N_proizvoljno)) {
+            alert("Molimo unesite ispravne numeričke vrednosti.");
+            return;
+        }
+
+        var SF = 0.007184 * Math.pow(M, 0.425) * Math.pow(H, 0.725);
+        var FM = 1.0;
+        var Fto = 0.0;
+        
+        if (dug === 'srednje') {
+            FM = 1.3;
+            Fto = -0.10;
+        } else if (dug === 'maksimalno') {
+            FM = 1.6;
+            Fto = -0.25;
+        }
+
+        var N_optimalno = Math.round(12 * SF * FM);
+        var dnevniVolumen = Math.round(N_optimalno * 0.833);
+        var nocniAnker = N_optimalno - dnevniVolumen;
+
+        var volumenVode = dnevniVolumen * 50;
+        var hronologijaHtml = "";
+        var preostaleKapi = dnevniVolumen;
+        
+        for (var sat = 8; sat <= 22; sat++) {
+            var kapiUSatu = Math.ceil(preostaleKapi / (22 - sat + 1));
+            preostaleKapi -= kapiUSatu;
+            var vremeString = sat < 10 ? "0" + sat + ":00č" : sat + ":00č";
+            hronologijaHtml += vremeString + " — 50 ml (" + kapiUSatu + " kapi)<br>";
+        }
+
+        var Vn = pol === 'Muski' ? 82.9 : 89.0;
+        var KHU_bazni = 6.6667;
+
+        var preostaliZivotBez = Vn - Vstart;
+        if (preostaliZivotBez < 0) preostaliZivotBez = 0;
+        var Ve_bez = Vstart + (preostaliZivotBez * (1 + Fto));
+
+        var preostaliZivotPuna = (Vn - Vstart) * KHU_bazni;
+        if (preostaliZivotPuna < 0) preostaliZivotPuna = 0;
+        var Ve_puna = Vstart + (preostaliZivotPuna * (1 + Fto));
+
+        var odnosKapi = N_optimalno > 0 ? (N_proizvoljno / N_optimalno) : 0;
+        if (odnosKapi > 1) odnosKapi = 1;
+        var KHU_prilagodjen = KHU_bazni * odnosKapi;
+
+        var preostaliZivotProizvoljan = (Vn - Vstart) * KHU_prilagodjen;
+        if (preostaliZivotProizvoljan < 0) preostaliZivotProizvoljan = 0;
+        var Ve_proizvoljna = Vstart + (preostaliZivotProizvoljan * (1 + Fto));
+
+        document.getElementById('res-sf').innerText = SF.toFixed(4) + " m²";
+        document.getElementById('res-fm').innerText = FM.toFixed(1);
+        document.getElementById('res-n').innerText = N_optimalno + " kapi";
+        document.getElementById('res-dnevni').innerText = dnevniVolumen + " kapi";
+        document.getElementById('res-nocni').innerText = nocniAnker + " kapi";
